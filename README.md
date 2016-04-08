@@ -5,7 +5,7 @@
 
 # Usage:
 	While being in directory with download-exe.py and run.py use this command:
-$python run.py
+	$python run.py
 
 # Instructions:
 	1. Enter an URL in quotation marks of the web page containing links to task-files (or exercises, or lecture slides)
