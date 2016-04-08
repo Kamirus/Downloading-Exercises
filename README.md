@@ -1,13 +1,14 @@
 # Downloading-Exercises
 
-Purpose: This is just a pretext to write a python script.
+# Version of interpreter:
+	Python 2.X
 
-(future...) Usage:
-	1. Enter an URL of the web page containing links to task-files (or exercises, or lecture slides)
-	2. Script will take all links from that page, which:
-		a) lead to file with non-html extension (like .pdf)
-		OR
-		b) href contains some given phrase (maybe: 'zad')
-	3. Then it will download these filtered files (into current directory)
+# Usage:
+	While being in directory with download-exe.py and run.py use this command:
+$python run.py
 
-# this is not done, yet.
+# Instructions:
+	1. Enter an URL in quotation marks of the web page containing links to task-files (or exercises, or lecture slides)
+	2. Enter the phrase in quotation marks which is in all files, that you want to download
+	3. Script will take all links with given phrase 
+	4. Then it will download these filtered files (into current directory)

@@ -1,3 +1,4 @@
+import sys
 import requests
 import urllib
 from bs4 import BeautifulSoup
@@ -15,8 +16,9 @@ def get_links_with(url, phrase):
         x = elem.get('href')
         if x is None:
             continue
-        if x.find(phrase) is 0 and x not in hrefs:
+        if x.find(phrase) is not -1 and x not in hrefs:
             hrefs.append(x)
+            print "Added to queue: " + x
     return hrefs
 
 
@@ -32,13 +34,17 @@ def download(url, phrase):
     pre_link = prepare_sub_link(url)
 
     for link in links:
+        if 'http' in link:
+            print "Downloading...: " + link.partition('/')[-1]
+            urllib.urlretrieve(link, link.partition('/')[-1])
+            continue
         task_url = pre_link + link
-        urllib.urlretrieve(task_url, link.partition('/')[-1])
+        if '/' in link:
+            print "Downloading...: " + link.partition('/')[-1]
+            urllib.urlretrieve(task_url, link.partition('/')[-1])
+        else:
+            print "Downloading...: " + link
+            urllib.urlretrieve(task_url, link)
 
 
-URL2 = "http://www.ii.uni.wroc.pl/~prz/2015zima/java/java.html"
-URL = "http://www.ii.uni.wroc.pl/~prz/2016lato/cpp/cpp.html"
-PHRASE = 'zad'
-
-download(URL2, PHRASE)
-
+download(sys.argv[1], sys.argv[2])
