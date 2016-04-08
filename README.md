@@ -1,4 +1,7 @@
 # Downloading-Exercises
+What it does?
+This is a simple script which goes to given URL then it downloads all files that have a given PHRASE in their href.
+Let me know if You found any bugs :)
 
 # Version of interpreter:
 	Python 2.X
