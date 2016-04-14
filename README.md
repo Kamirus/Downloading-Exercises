@@ -11,7 +11,7 @@ Let me know if You found any bugs :)
 	$python run.py
 
 # Instructions:
-	1. Enter an URL of the web page containing links to task-files (or exercises, or lecture slides)
+	1. Enter an URL of the web page containing links to task-files (or exercises, or lecture slides, or any <a href> links)
 	2. Enter the phrase which is in all files, that you want to download
 	3. Script will take all links with given phrase 
 	4. Then it will download these filtered files (into current directory)
