@@ -4,7 +4,6 @@ import urllib
 import re
 from html.parser import HTMLParser
 import requests
-# from bs4 import BeautifulSoup
 
 
 class DownloaderHTMLParser(HTMLParser):
@@ -53,41 +52,6 @@ def filter_addresses(addresses: list, pattern):
 
 def make_full_link(link: str, url: str, base) -> str:
     return urllib.parse.urljoin(url, link)
-    # splitted_link = link.split('/')
-    # splitted_url = url.split('/')
-
-    # # if url leads to file, e.g. 'path/to/index.html'
-    # if len(splitted_url[-1].split('.')) > 1:
-    #     splitted_url.pop()
-
-    # # relative link
-    # if re.search('://', link) is None:
-    #     if '.' in splitted_url[0]:
-    #         i = 0
-    #         for part in splitted_link:
-    #             if part == '..':
-    #                 splitted_url.pop()
-    #             elif part == '.':
-    #                 splitted_url.extend(splitted_link[i+1:])
-    #                 break
-    #             else:
-    #                 splitted_url.extend(splitted_link[i:])
-    #                 break
-    #             i += 1 # points to current
-    #     elif len(base) > 0:
-    #         return base[0] + link
-    #     else:
-    #         if url.find('/~') != -1:
-    #             splitted_url = splitted_url[0:4]
-    #         elif url.startswith('http'):
-    #             splitted_url = splitted_url[0:3]
-    #         else:
-    #             splitted_url = [splitted_url[0]]
-    #         splitted_url.extend(splitted_link)
-    #     return '/'.join(splitted_url)
-    # else:
-    #     # absolute link
-    #     return link
 
 
 def get_filtered_addresses(url: str, pattern: str, BASE):
